@@ -1,0 +1,2 @@
+# eai
+Embodied AI Course
