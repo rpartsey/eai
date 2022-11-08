@@ -5,7 +5,7 @@ import agents
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config-path", type=str, default="configs/hc_pointnav2021.test_scenes.rgbd.yaml")
+    parser.add_argument("--config-path", type=str, default="configs/pointnav/pointnav2021.test_scenes.rgbd.yaml")
     parser.add_argument("--agent", type=str, default="RandomAgent", choices=["RandomAgent"])
     parser.add_argument("--num-episodes", type=int, default=5)
     args = parser.parse_args()
