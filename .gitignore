@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Pycharm
+.idea
+
+# VS Code
+.vscode/
+
+# Exclude data from source control by default
+data
