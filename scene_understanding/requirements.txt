@@ -1,0 +1,2 @@
+habitat==0.2.2
+habitat-sim==0.2.2
