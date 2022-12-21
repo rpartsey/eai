@@ -1,0 +1,33 @@
+BASE_TASK_CONFIG_PATH: "../configs/mp3d_evaluate_noise_free.yaml"
+TRAINER_NAME: "occant_exp"
+ENV_NAME: "ExpRLEnv"
+SIMULATOR_GPU_ID: 1
+TORCH_GPU_ID: 0
+VIDEO_OPTION: ["disk"]
+VIDEO_DIR: "video_dir"
+NUM_PROCESSES: 1
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+T_EXP: 1000
+
+RL:
+  ANS:
+    overall_map_size: 2001
+    image_scale_hw: [128, 128]
+    MAPPER:
+      map_size: 101
+      num_mapper_steps: 100
+      registration_type: 'moving_average'
+      label_id: 'ego_map_gt_anticipated'
+      ignore_pose_estimator: False
+      pose_predictor_inputs: ['ego_map']
+      num_update_batches: 50
+      map_batch_size: 150
+      use_data_parallel: True
+      replay_size: 100000
+      gpu_ids: [1, 2, 3, 4, 5, 6, 7]
+    OCCUPANCY_ANTICIPATOR:
+      type: 'occant_rgbd'
+      GP_ANTICIPATION:
+        wall_fov: 120.0
+        resnet_type: 'resnet18'
+        unet_nsf: 64
